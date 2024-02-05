@@ -158,7 +158,7 @@ section.about h3{
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    margin-right: 3rem;
+    margin-right: 4rem;
     transition: all 0.3s ease;
 }
 
@@ -831,6 +831,69 @@ footer .copyright{
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
+}
+
+@media (max-width:360px){
+
+    .container{
+        width:360px
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero .left img {
+        width: 310px;
+    }
+
+    .hero .right p {
+        line-height: 1.9;
+        margin-bottom: 2rem;
+        padding-right: 1rem;
+    }
+
+    section.about .flex-1 p {
+        padding-right: 1rem;
+    }
+
+    section.about .about-me-img {
+        height: 310px;
+    }
+
+    section.about .flex-1 p {
+        padding-right: 1rem;
+    }
+
+    section.services .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 2rem;
+        grid-row-gap: 5rem;
+        margin: 1rem;
+    }
+
+    section.blog .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 3rem;
+    }
+
+    section.contact .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 3rem;
+    }
+
+    section.contact .form1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
 }
 
 @media (max-width:280px){
