@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yobin Bangera | Data & Business Analyst</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       GLOBAL STYLES
+    ====================================================== */
+
+    :root {
+      --background-color: #f4f7fb;
+      --secondary-background: #ffffff;
+      --text-color: #111827;
+      --secondary-text: #6b7280;
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --border-color: #e5e7eb;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --glass-background: rgba(255, 255, 255, 0.7);
+      --navbar-background: rgba(255, 255, 255, 0.75);
+    }
+
+    body.dark-mode {
+      --background-color: #0f172a;
+      --secondary-background: #111827;
+      --text-color: #f8fafc;
+      --secondary-text: #94a3b8;
+      --primary-color: #60a5fa;
+      --primary-hover: #3b82f6;
+      --border-color: #1f2937;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --glass-background: rgba(17, 24, 39, 0.7);
+      --navbar-background: rgba(15, 23, 42, 0.7);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--secondary-text);
+      margin-bottom: 60px;
+      font-size: 1rem;
+    }
+
+    .highlight {
+      color: var(--primary-color);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      background: var(--navbar-background);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .theme-toggle-button {
+      background: var(--secondary-background);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .theme-toggle-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* =====================================================
+       HERO SECTION
+    ====================================================== */
+
+    /* =====================================================
+       PREMIUM UI ENHANCEMENTS
+    ====================================================== */
+
+    body {
+      background-image:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.12), transparent 30%);
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: var(--secondary-text);
+      line-height: 1.8;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button,
+    .secondary-button {
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .primary-button {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .primary-button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-3px);
+    }
+
+    .secondary-button {
+      border: 1px solid var(--border-color);
+      background: var(--secondary-background);
+    }
+
+    .secondary-button:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary-color);
+    }
+
+    .hero-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image {
+      width: 360px;
+      height: 360px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 4px solid var(--primary-color);
+      box-shadow: var(--card-shadow);
+      animation: floatingAnimation 4s ease-in-out infinite;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes floatingAnimation {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* =====================================================
+       ABOUT SECTION
+    ====================================================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .about-card {
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      background: var(--secondary-background);
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .about-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .about-card p {
+      line-height: 1.9;
+      color: var(--secondary-text);
+    }
+
+    /* =====================================================
+       SKILLS SECTION
+    ====================================================== */
+
+    .skills-grid {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scroll-behavior: smooth;
+    }
+
+      /* Hide Scrollbar */
+
+    .skills-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .skills-grid::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .skills-grid::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 20px;
+    }
+
+    .skill-card {
+      min-width: 250px;
+      flex-shrink: 0;
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      background: var(--secondary-background);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .skill-card h4 {
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: var(--secondary-text);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* =====================================================
+       PROJECT SECTION
+    ====================================================== */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      background: var(--secondary-background);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: var(--secondary-text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .project-link-button {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: var(--primary-color);
+      color: white;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .project-link-button:hover {
+      background: var(--primary-hover);
+    }
+
+    /* =====================================================
+       EDUCATION & CERTIFICATIONS
+    ====================================================== */
+
+    .timeline-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      padding-left: 40px;
+    }
+
+    /* Vertical Line */
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    .timeline-card {
+      position: relative;
+      background: var(--secondary-background);
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      margin-left: 30px;
+      transition: 0.3s;
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Hover Effect */
+
+    .timeline-card:hover {
+      transform: translateY(-8px);
+   }
+
+   /* Timeline Dot */
+
+   .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: -42px;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      border: 4px solid var(--background-color);
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+    }
+
+    .timeline-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .timeline-card span {
+      color: var(--primary-color);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card p {
+      color: var(--secondary-text);
+      line-height: 1.8;
+    }
+
+  /* =====================================================
+   ACHIEVEMENT BULLET LIST
+  ===================================================== */
+
+    .achievement-list {
+     padding-left: 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 18px;
+   }
+
+    .achievement-list li {
+     color: var(--secondary-text);
+     line-height: 1.9;
+     position: relative;
+     padding-left: 12px;
+    }
+
+    .achievement-list li::marker {
+     color: var(--primary-color);
+     font-size: 1.1rem;
+    }
+
+    .achievement-list strong {
+     color: var(--text-color);
+   }
+
+    /* =====================================================
+       CONNECT SECTION
+    ====================================================== */
+
+    .connect-container {
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .social-link {
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: var(--secondary-background);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      color: var(--secondary-text);
+      background: var(--secondary-background);
+    }
+
+    /* =====================================================
+       RESPONSIVE DESIGN
+    ====================================================== */
+
+    @media (max-width: 992px) {
+      .hero-content,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image-container {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-text h1 {
+        font-size: 2.7rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero-image {
+        width: 280px;
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body class = "dark-mode">
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <a href="#home" class="logo">YOBIN.</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#connect">Connect</a></li>
+
+        <!-- Resume Download Button -->
+        <li>
+          <a href="resume.pdf" download class="primary-button" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 10px;">
+            <i class="fa-solid fa-download"></i>
+            Resume
+          </a>
+        </li>
+      </ul>
+
+      <button class="theme-toggle-button" id="themeToggleButton" title="Toggle theme" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       HERO SECTION
+  ====================================================== -->
+
+  <section class="hero-section" id="home">
+    <div class="container hero-content">
+
+      <div class="hero-text" data-aos="fade-right">
+        <h1>
+          Hello I am, <span class="highlight">Yobin Omkar Bangera.</span>
+        </h1>
+
+        <p>
+          MBA Student • Data Analyst • Business Analyst • Digital Marketing Enthusiast
+          <br><br>
+          Passionate about transforming raw data into meaningful business insights through analytics, dashboards, strategic thinking, and modern problem-solving.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-button">
+            <i class="fa-solid fa-chart-line"></i>
+            View My Projects
+          </a>
+
+          <a href="https://github.com/YobinOmkarBangera" target="_blank" class="secondary-button">
+            <i class="fa-brands fa-github"></i>
+            My GitHub Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-container" data-aos="fade-left">
+        <div class="hero-image" style="border-radius: 40px;">
+          <!-- Replace with your profile image -->
+          <img src="assets/images/profile.jpeg" alt="Yobin Bangera">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       ABOUT SECTION
+  ====================================================== -->
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span class="highlight">Me</span></h2>
+      <p class="section-subtitle">My journey, goals, and background</p>
+
+      <div class="about-grid">
+
+        <div class="about-card" data-aos="fade-up">
+          <h3>Who I Am ?</h3>
+          <p>
+            Currently I am a MBA student from Mahindra University Hyderabad, A BCA graduate from Amity University Mumbai with a strong interest in analytics, business strategy, consulting, and digital transformation. I enjoy working with data, identifying business problems, and creating actionable solutions.
+          </p>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>My Vision !</h3>
+          <p>
+            My goal is to build a strong career as a Data Analyst, Business Analyst, or Consultant by combining analytical thinking, technical skills, and business understanding to create meaningful business impact.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SKILLS SECTION
+  ====================================================== -->
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+      <p class="section-subtitle">Tools and technologies I work with</p>
+
+      <div class="skills-grid">
+
+        <div class="skill-card" data-aos="zoom-in">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h4>Data Analytics</h4>
+          <p>Data cleaning, EDA, dashboards, reporting, and business insights.</p>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fa-brands fa-python"></i>
+          <h4>Python</h4>
+          <p>Pandas, NumPy, Matplotlib, and analytics workflows.</p>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fa-solid fa-database"></i>
+          <h4>SQL</h4>
+          <p>Database querying, joins, aggregations, and reporting.</p>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-file-excel"></i>
+          <h4>Excel</h4>
+          <p>Data cleaning, pivot tables, functions and data visualization.</p>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-chart-column"></i>
+          <h4>Power BI</h4>
+          <p> Interactive dashboards, KPI tracking, business intelligence, and visualization. </p>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h4>Digital Marketing</h4>
+          <p>SEO, SEM, Meta Ads, analytics, and campaign strategy.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PROJECTS SECTION
+  ====================================================== -->
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+      <p class="section-subtitle">Some of my best portfolio projects</p>
+
+      <div class="project-grid">
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-image">
+            <img src="assets/images/netflix_project.png" alt="Project Image">
+          </div>
+
+          <div class="project-content">
+            <h3>Netflix Content Analysis</h3>
+            <p>
+              Built a complete content analytics project using Python to identify user preferences, viewing patterns, and content performance metrics.
+            </p>
+
+            <div class="project-links">
+              <a href="https://github.com/YobinOmkarBangera/Netflix_Dashboard_Tableau" target="_blank" class="project-link-button">
+                GitHub
+              </a>
+
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="assets/images/sales_project.png" alt="Project Image">
+          </div>
+
+          <div class="project-content">
+            <h3>Mobile Sales Dashboard</h3>
+            <p>
+              Created an interactive dashboard to visualize sales, customer behavior, and business KPIs for decision-making.
+            </p>
+
+            <div class="project-links">
+              <a href="https://github.com/YobinOmkarBangera/Mobile_Sales_Dashboard_PowerBI" target="_blank" class="project-link-button">
+                GitHub
+              </a>
+
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <img src="assets/images/road_project.png" alt="Project Image">
+          </div>
+
+          <div class="project-content">
+            <h3>Road Accident Analysis</h3>
+            <p>
+              Analyzed road accident data to identify patterns, contributing factors, and potential safety improvements.
+            </p>
+
+            <div class="project-links">
+              <a href="https://github.com/YobinOmkarBangera/Road-Accident-Analysis-Dashboard" target="_blank" class="project-link-button">
+                GitHub
+              </a>
+
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+     EDUCATION SECTION
+  ====================================================== -->
+
+  <section id="education">
+    <div class="container">
+
+    <h2 class="section-title">
+      My <span class="highlight">Education</span>
+    </h2>
+
+    <p class="section-subtitle">
+      My academic journey and qualifications
+    </p>
+
+    <div class="timeline-container">
+
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="100">
+        <h3>Master of Business Administration (MBA)</h3>
+
+        <span>2025 - 2027 • Mahindra University Hyderabad</span>
+        <span>Business Analytics as (Major) and Marketing as (Minor) Specialization</span>
+        <span>Social Media Coordinator | Non-Academic class Representative | Research Assistant</span>
+
+        <p>
+          Focused on analytics, consulting, business strategy, data-driven decision making and also received merit scholarships.
+        </p>
+      </div>
+
+      <div class="timeline-card" data-aos="fade-right">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+
+        <span>2021 - 2024 • Amity University Mumbai</span>
+
+        <p>
+          Graduated with 8.97 CGPA in Bachelor of Computer Applications as (Major) and Bachelor's Degree in Animation as (Minor) and also received merit scholarships for academic excellence.
+        </p>
+      </div>
+
+      <div class="timeline-card" data-aos="fade-right">
+        <h3>Higher Secondary Certificate (HSC)</h3>
+
+        <span>2019 - 2021 • Bhavan's College, Mumbai</span>
+
+        <p>
+          Completed Higher Secondary Education with a focus on commerce stream, achieving 94% aggregate marks.
+        </p>
+      </div>
+
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="200">
+        <h3>Secondary School Certificate (SSC)</h3>
+
+        <span>2019 • MVM's International School, Mumbai</span>
+
+        <p>
+          Completed Secondary School Education with achieving 82.4% aggregate marks.
+        </p>
+      </div>
+      
+    </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+     EXPERIENCE SECTION
+  ====================================================== -->
+
+  <section id="experience">
+  <div class="container">
+
+    <h2 class="section-title">
+      My <span class="highlight">Experience</span>
+    </h2>
+
+    <p class="section-subtitle">
+      Work Experience, programs, and practical exposure
+    </p>
+
+    <div class="timeline-container">
+
+      <div class="timeline-card" data-aos="fade-right">
+        <h3>Microlabs Data Analyst Intern</h3>
+
+        <span>2 months • April - June 2026 • Microlabs India Pvt. Ltd.</span>
+
+        <p>
+          worked on data cleaning, exploratory data analysis, and dashboard creation to provide insights for business decision-making.
+        </p>
+      </div>
+
+       <div class="timeline-card" data-aos="fade-right">
+        <h3>Campus Ambassador for IIT Delhi edc</h3>
+
+        <span>2 months • Jan - Feb 2026 • IIT Delhi</span>
+
+        <p>
+          Represented IIT Delhi for the Becon'26 event and promoted the institution's programs and initiatives.
+        </p>
+      </div>
+
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="100">
+        <h3>Digital Marketing Mentorship</h3>
+
+        <span>6 months • Jan - June 2025 • WsCube Tech</span>
+
+        <p>
+          Completed an extensive mentorship program covering SEO, SEM, Meta Ads, analytics, and campaign strategy.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <!-- =====================================================
+     ACHIEVEMENTS SECTION
+  ====================================================== -->
+
+  <section id="achievements">
+  <div class="container">
+
+    <h2 class="section-title">
+      My <span class="highlight">Achievements</span>
+    </h2>
+
+    <p class="section-subtitle">
+      Highlights of my academic and professional journey
+    </p>
+
+    <div class="about-card" data-aos="zoom-in">
+
+      <ul class="achievement-list">
+
+        <li>Received <strong>merit scholarships</strong> during academic journey.</li>
+
+        <li>Reached <strong>Champion Milestone</strong> in Google Cloud Arcade Program.</li>
+
+        <li>Participated in <strong>hackathons, sports, fashion show, and university events</strong>.</li>
+
+        <li>Built <strong>portfolio projects</strong> in analytics, dashboards, and marketing strategy.</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+  </section>
+
+  <!-- =====================================================
+       CONNECT SECTION
+  ====================================================== -->
+
+  <section id="connect">
+    <div class="container connect-container">
+      <h2 class="section-title">Connect <span class="highlight">With Me</span></h2>
+      <p class="section-subtitle">Let's connect through social platforms</p>
+
+      <div class="social-links">
+
+        <a href="https://github.com/YobinOmkarBangera" target="_blank" class="social-link">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/yobin-bangera/" target="_blank" class="social-link">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.credly.com/users/yobin-omkar-bangera" target="_blank" class="social-link">
+          <i class="fa-solid fa-certificate"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 | Yobin Omkar Bangera </p>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    /* =====================================================
+       AOS ANIMATION INITIALIZATION
+    ====================================================== */
+
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    /* =====================================================
+       LIGHT & DARK MODE TOGGLE
+    ====================================================== */
+
+    const themeToggleButton = document.getElementById('themeToggleButton');
+    const body = document.body;
+
+    themeToggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      const icon = themeToggleButton.querySelector('i');
+
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+
+  </script>
+
+</body>
+</html>
