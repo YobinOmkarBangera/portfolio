@@ -31,7 +31,7 @@ class Handler(SimpleHTTPRequestHandler):
     rules = load_header_rules()
 
     def do_GET(self):
-        # Same as "cleanUrls" in vercel.json: /blog/my-post serves blog/my-post.html
+        # Same as "cleanUrls" in vercel.json: /about serves about.html
         path = self.path.split("?", 1)[0].rstrip("/")
         if path and "." not in path.rsplit("/", 1)[-1] and (ROOT / (path.lstrip("/") + ".html")).is_file():
             self.path = path + ".html"

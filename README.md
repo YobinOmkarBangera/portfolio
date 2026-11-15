@@ -11,21 +11,15 @@ portfolio/
 ├── favicon.svg             Browser tab icon
 ├── robots.txt              Tells search engines the site can be indexed
 ├── vercel.json             Hosting settings and security headers
-├── blog/
-│   ├── index.html          Blog page listing every post
-│   ├── posts.json          The list of posts (add one entry per post)
-│   └── _template.html      Starting point for a new post (not published)
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css      Colours, fonts, sizes (edit here to restyle the site)
 │   │   ├── base.css        Reset, typography, layout helpers, scroll reveal
 │   │   ├── components.css  Header, buttons, cards, chips, timeline, footer
-│   │   ├── sections.css    Hero, about, projects, contact
-│   │   └── blog.css        Blog page and post layout
+│   │   └── sections.css    Hero, about, projects, contact
 │   ├── js/
 │   │   ├── theme-init.js   Applies the saved light/dark theme before the page shows
-│   │   ├── main.js         Theme toggle, mobile menu, scroll animations
-│   │   └── blog.js         Builds the post cards from blog/posts.json
+│   │   └── main.js         Theme toggle, mobile menu, scroll animations
 │   ├── images/             Photos and screenshots (WebP)
 │   └── resume/             The résumé PDF behind the "Download résumé" buttons
 └── tools/
@@ -48,7 +42,6 @@ Then open http://localhost:4173. The preview server applies the same security he
 | Add a featured project           | `index.html`: copy an `<article class="project">` block and edit it   |
 | Add a smaller project            | `index.html`: copy an `<article class="card mini-project">` block     |
 | Update the résumé                | Replace `assets/resume/Yobin_Bangera_Resume.pdf` (keep the file name) |
-| Write a blog post                | See "Writing a blog post" below                                       |
 | Add a job or a degree            | `index.html`: copy a `<li class="timeline-item">` block               |
 | Add an achievement or skill card | `index.html`: copy an `<article class="card">` block                  |
 | Change colours or fonts          | `assets/css/tokens.css`                                               |
@@ -60,42 +53,6 @@ Then open http://localhost:4173. The preview server applies the same security he
 Keep images small: export as WebP, no wider than about 1280 px. Photos taken on a phone contain hidden data (device, sometimes location), so export or resize them before adding them here instead of copying the original file.
 
 Always set `width`, `height` and a descriptive `alt` on `<img>` tags.
-
-## Writing a blog post
-
-The Blog link in the menu and the "Latest writing" section on the home page stay hidden while there are no posts. They appear by themselves as soon as the first post is listed in `blog/posts.json`.
-
-1. **Create the page.** Copy `blog/_template.html` and rename the copy, for example `blog/power-bi-tips.html`. Use lowercase letters, numbers and hyphens only. That name (without `.html`) is the post's *slug*, and its address will be `/blog/power-bi-tips`.
-2. **Write the post.** Open the new file and replace everything marked `CHANGE`: the title, description, address, date and the post itself. The template shows how to write headings, lists, images, quotes and code.
-3. **List it.** Open `blog/posts.json` and add an entry. Newest first is tidy, but the site sorts by date anyway.
-
-```json
-[
-  {
-    "slug": "power-bi-tips",
-    "title": "Five Power BI habits that made my dashboards faster",
-    "date": "2026-12-01",
-    "summary": "One or two sentences shown on the post card.",
-    "tags": ["Power BI", "DAX"],
-    "minutes": 5
-  }
-]
-```
-
-| Field     | Meaning                                                          |
-| --------- | ---------------------------------------------------------------- |
-| `slug`    | The file name without `.html`. Must match exactly.               |
-| `title`   | Shown on the card.                                               |
-| `date`    | `YYYY-MM-DD`. Used for sorting and shown on the card.            |
-| `summary` | Short description on the card (optional).                        |
-| `tags`    | Up to four labels (optional).                                    |
-| `minutes` | Reading time (optional).                                         |
-
-For a second post, add another `{ ... }` block separated by a comma. If a post doesn't show up, the usual cause is a missing comma or quote in `posts.json`.
-
-4. **Preview** with `python tools/serve.py`, then commit and push.
-
-Images for posts go in `assets/images/blog/`.
 
 ## Security
 
