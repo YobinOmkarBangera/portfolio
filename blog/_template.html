@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- =====================================================
+       BLOG POST TEMPLATE
+       1. Copy this file and rename it, e.g. blog/my-first-post.html
+          (lowercase letters, numbers and hyphens only).
+       2. Replace everything marked CHANGE below.
+       3. Add the post to the top of blog/posts.json.
+       Full steps: README.md > "Writing a blog post".
+  ====================================================== -->
+
+  <!-- CHANGE: title and description (the description shows in Google and link previews) -->
+  <title>Post title goes here | Yobin Omkar Bangera</title>
+  <meta name="description" content="One or two sentences that summarise the post.">
+
+  <!-- CHANGE: replace _template with your file name, without .html -->
+  <link rel="canonical" href="https://yobinportfolio.vercel.app/blog/_template">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Post title goes here">
+  <meta property="og:description" content="One or two sentences that summarise the post.">
+  <meta property="og:image" content="https://yobinportfolio.vercel.app/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="author" content="Yobin Omkar Bangera">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme-init.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/sections.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+
+<body>
+
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Yobin Bangera, portfolio home">
+        <span class="brand-mark" aria-hidden="true">YB</span>
+        <span class="brand-name">Yobin Bangera</span>
+      </a>
+
+      <nav class="site-nav site-nav-simple" aria-label="Main">
+        <ul>
+          <li><a href="/">Portfolio</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch colour theme">
+          <svg class="icon icon-when-dark"><use href="#icon-sun"></use></svg>
+          <svg class="icon icon-when-light"><use href="#icon-moon"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <article class="container narrow post">
+
+      <header class="post-header">
+        <a class="post-back" href="/blog">&larr; All posts</a>
+
+        <!-- CHANGE: date (shown text and the datetime value), reading time, title, intro -->
+        <p class="post-meta"><time datetime="2026-01-01">1 Jan 2026</time> &middot; 5 min read</p>
+        <h1>Post title goes here</h1>
+        <p class="post-intro">A short introduction: what the post is about and why it is worth reading.</p>
+      </header>
+
+      <!-- CHANGE: the post itself. Use the elements below as building blocks. -->
+      <div class="post-body">
+
+        <p>
+          Write a paragraph inside a &lt;p&gt; tag. Use <strong>strong</strong> for emphasis and
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">links</a> to point to sources.
+        </p>
+
+        <h2>A section heading</h2>
+
+        <p>Break the post into sections with &lt;h2&gt; headings, and use &lt;h3&gt; for sub-points.</p>
+
+        <ul>
+          <li>A bullet point</li>
+          <li>Another bullet point</li>
+        </ul>
+
+        <!-- An image: save it in assets/images/blog/ first, and always fill in alt, width and height -->
+        <!--
+        <figure>
+          <img src="/assets/images/blog/my-chart.webp" alt="Describe what the image shows" width="1280" height="720" loading="lazy">
+          <figcaption>A caption for the image.</figcaption>
+        </figure>
+        -->
+
+        <blockquote>A quote or a key takeaway you want to stand out.</blockquote>
+
+        <pre><code>SELECT city, SUM(sales) AS total_sales
+FROM orders
+GROUP BY city;</code></pre>
+
+        <h2>Wrapping up</h2>
+
+        <p>Finish with what the reader should take away.</p>
+
+      </div>
+
+      <footer class="post-footer">
+        <a class="button button-ghost" href="/blog">&larr; All posts</a>
+        <a class="button button-primary" href="/#contact">Get in touch</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Yobin Omkar Bangera</p>
+      <a href="/">Back to the portfolio</a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

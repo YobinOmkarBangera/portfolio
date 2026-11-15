@@ -1,1105 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yobin Bangera | Data & Business Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Fonts -->
+  <title>Yobin Omkar Bangera | Data &amp; Business Analyst</title>
+  <meta name="description" content="Portfolio of Yobin Omkar Bangera, a data and business analyst and MBA candidate at Mahindra University. Power BI dashboards, Python analysis and machine-learning projects.">
+  <meta name="author" content="Yobin Omkar Bangera">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="canonical" href="https://yobinportfolio.vercel.app/">
+
+  <!-- Link previews (LinkedIn, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yobinportfolio.vercel.app/">
+  <meta property="og:title" content="Yobin Omkar Bangera | Data &amp; Business Analyst">
+  <meta property="og:description" content="Dashboards, analysis and business strategy. MBA candidate in Business Analytics and Marketing at Mahindra University.">
+  <meta property="og:image" content="https://yobinportfolio.vercel.app/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+  <!-- Sets the saved light/dark theme before the page paints -->
+  <script src="/assets/js/theme-init.js"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <style>
-    /* =====================================================
-       GLOBAL STYLES
-    ====================================================== */
-
-    :root {
-      --background-color: #f4f7fb;
-      --secondary-background: #ffffff;
-      --text-color: #111827;
-      --secondary-text: #6b7280;
-      --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
-      --border-color: #e5e7eb;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --glass-background: rgba(255, 255, 255, 0.7);
-      --navbar-background: rgba(255, 255, 255, 0.75);
-    }
-
-    body.dark-mode {
-      --background-color: #0f172a;
-      --secondary-background: #111827;
-      --text-color: #f8fafc;
-      --secondary-text: #94a3b8;
-      --primary-color: #60a5fa;
-      --primary-hover: #3b82f6;
-      --border-color: #1f2937;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      --glass-background: rgba(17, 24, 39, 0.7);
-      --navbar-background: rgba(15, 23, 42, 0.7);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--background-color);
-      color: var(--text-color);
-      transition: all 0.3s ease;
-      overflow-x: hidden;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--secondary-text);
-      margin-bottom: 60px;
-      font-size: 1rem;
-    }
-
-    .highlight {
-      color: var(--primary-color);
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    /* =====================================================
-       NAVBAR
-    ====================================================== */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      background: var(--navbar-background);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .navbar-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-color);
-    }
-
-    .theme-toggle-button {
-      background: var(--secondary-background);
-      border: 1px solid var(--border-color);
-      color: var(--text-color);
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .theme-toggle-button:hover {
-      transform: scale(1.05);
-    }
-
-    /* =====================================================
-       HERO SECTION
-    ====================================================== */
-
-    /* =====================================================
-       PREMIUM UI ENHANCEMENTS
-    ====================================================== */
-
-    body {
-      background-image:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.12), transparent 30%);
-    }
-
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-text h1 {
-      font-size: 4rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      color: var(--secondary-text);
-      line-height: 1.8;
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .primary-button,
-    .secondary-button {
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .primary-button {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    .primary-button:hover {
-      background: var(--primary-hover);
-      transform: translateY(-3px);
-    }
-
-    .secondary-button {
-      border: 1px solid var(--border-color);
-      background: var(--secondary-background);
-    }
-
-    .secondary-button:hover {
-      transform: translateY(-3px);
-      border-color: var(--primary-color);
-    }
-
-    .hero-image-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image {
-      width: 360px;
-      height: 360px;
-      border-radius: 30px;
-      overflow: hidden;
-      border: 4px solid var(--primary-color);
-      box-shadow: var(--card-shadow);
-      animation: floatingAnimation 4s ease-in-out infinite;
-    }
-
-    .hero-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @keyframes floatingAnimation {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-
-    /* =====================================================
-       ABOUT SECTION
-    ====================================================== */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-
-    .about-card {
-      -webkit-backdrop-filter: blur(18px);
-      backdrop-filter: blur(18px);
-      background: var(--secondary-background);
-      padding: 35px;
-      border-radius: 24px;
-      box-shadow: var(--card-shadow);
-      border: 1px solid var(--border-color);
-    }
-
-    .about-card h3 {
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-    }
-
-    .about-card p {
-      line-height: 1.9;
-      color: var(--secondary-text);
-    }
-
-    /* =====================================================
-       SKILLS SECTION
-    ====================================================== */
-
-    .skills-grid {
-      display: flex;
-      gap: 25px;
-      overflow-x: auto;
-      padding-bottom: 15px;
-      scroll-behavior: smooth;
-    }
-
-      /* Hide Scrollbar */
-
-    .skills-grid::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .skills-grid::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .skills-grid::-webkit-scrollbar-thumb {
-      background: var(--primary-color);
-      border-radius: 20px;
-    }
-
-    .skill-card {
-      min-width: 250px;
-      flex-shrink: 0;
-      -webkit-backdrop-filter: blur(18px);
-      backdrop-filter: blur(18px);
-      background: var(--secondary-background);
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .skill-card i {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-
-    .skill-card h4 {
-      margin-bottom: 10px;
-    }
-
-    .skill-card p {
-      color: var(--secondary-text);
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    /* =====================================================
-       PROJECT SECTION
-    ====================================================== */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .project-card {
-      -webkit-backdrop-filter: blur(18px);
-      backdrop-filter: blur(18px);
-      background: var(--secondary-background);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      border: 1px solid var(--border-color);
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .project-image {
-      height: 220px;
-      overflow: hidden;
-    }
-
-    .project-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: 0.4s;
-    }
-
-    .project-card:hover .project-image img {
-      transform: scale(1.05);
-    }
-
-    .project-content {
-      padding: 25px;
-    }
-
-    .project-content h3 {
-      margin-bottom: 12px;
-    }
-
-    .project-content p {
-      color: var(--secondary-text);
-      line-height: 1.8;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .project-link-button {
-      padding: 10px 18px;
-      border-radius: 10px;
-      background: var(--primary-color);
-      color: white;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .project-link-button:hover {
-      background: var(--primary-hover);
-    }
-
-    /* =====================================================
-       EDUCATION & CERTIFICATIONS
-    ====================================================== */
-
-    .timeline-container {
-      position: relative;
-      max-width: 900px;
-      margin: auto;
-      padding-left: 40px;
-    }
-
-    /* Vertical Line */
-
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--primary-color);
-      border-radius: 10px;
-    }
-
-    .timeline-card {
-      position: relative;
-      background: var(--secondary-background);
-      padding: 30px;
-      margin-bottom: 40px;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--card-shadow);
-      margin-left: 30px;
-      transition: 0.3s;
-      -webkit-backdrop-filter: blur(18px);
-      backdrop-filter: blur(18px);
-    }
-
-    /* Hover Effect */
-
-    .timeline-card:hover {
-      transform: translateY(-8px);
-   }
-
-   /* Timeline Dot */
-
-   .timeline-card::before {
-      content: '';
-      position: absolute;
-      left: -42px;
-      top: 35px;
-      width: 20px;
-      height: 20px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      border: 4px solid var(--background-color);
-      box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
-    }
-
-    .timeline-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .timeline-card span {
-      color: var(--primary-color);
-      font-weight: 600;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .timeline-card p {
-      color: var(--secondary-text);
-      line-height: 1.8;
-    }
-
-  /* =====================================================
-   ACHIEVEMENT BULLET LIST
-  ===================================================== */
-
-    .achievement-list {
-     padding-left: 20px;
-     display: flex;
-     flex-direction: column;
-     gap: 18px;
-   }
-
-    .achievement-list li {
-     color: var(--secondary-text);
-     line-height: 1.9;
-     position: relative;
-     padding-left: 12px;
-    }
-
-    .achievement-list li::marker {
-     color: var(--primary-color);
-     font-size: 1.1rem;
-    }
-
-    .achievement-list strong {
-     color: var(--text-color);
-   }
-
-    /* =====================================================
-       CONNECT SECTION
-    ====================================================== */
-
-    .connect-container {
-      text-align: center;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .social-link {
-      -webkit-backdrop-filter: blur(18px);
-      backdrop-filter: blur(18px);
-      width: 70px;
-      height: 70px;
-      border-radius: 20px;
-      background: var(--secondary-background);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.7rem;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--card-shadow);
-      transition: 0.3s;
-    }
-
-    .social-link:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: var(--primary-color);
-      color: white;
-    }
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    .footer {
-      padding: 30px 0;
-      text-align: center;
-      border-top: 1px solid var(--border-color);
-      color: var(--secondary-text);
-      background: var(--secondary-background);
-    }
-
-    /* =====================================================
-       RESPONSIVE DESIGN
-    ====================================================== */
-
-    @media (max-width: 992px) {
-      .hero-content,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-text {
-        text-align: center;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-image-container {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero-text h1 {
-        font-size: 2.7rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .hero-image {
-        width: 280px;
-        height: 280px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles: tokens (colours, fonts) -> base -> components -> sections -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/sections.css">
+
+  <!-- Vercel Analytics and Speed Insights (only load on the deployed site) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yobin Omkar Bangera",
+    "url": "https://yobinportfolio.vercel.app/",
+    "jobTitle": "Data & Business Analyst",
+    "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Mahindra University" },
+      { "@type": "CollegeOrUniversity", "name": "Amity University Mumbai" }
+    ],
+    "sameAs": [
+      "https://github.com/YobinOmkarBangera",
+      "https://www.linkedin.com/in/yobin-bangera/",
+      "https://www.credly.com/users/yobin-omkar-bangera"
+    ]
+  }
+  </script>
 </head>
 
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
-
-<!-- Vercel Speed Insights -->
-<script defer src="/_vercel/speed-insights/script.js"></script>
-
-<body class = "dark-mode">
+<body>
 
   <!-- =====================================================
-       NAVBAR
+       ICONS
+       Each icon is defined once here and reused with
+       <svg class="icon"><use href="#icon-name"></use></svg>
   ====================================================== -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M8 17V9M13 17V5M18 17v-3"/></symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="icon-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+  </svg>
 
-  <nav class="navbar">
-    <div class="container navbar-content">
-      <a href="#home" class="logo">YOBIN.</a>
-
-      <ul class="nav-links">
-
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#connect">Connect</a></li>
-
-      </ul>
-
-      <button class="theme-toggle-button" id="themeToggleButton" title="Toggle theme" aria-label="Toggle theme">
-        <i class="fa-solid fa-sun"></i>
-      </button>
-    </div>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- =====================================================
-       HERO SECTION
+       HEADER / NAVIGATION
   ====================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
 
-  <section class="hero-section" id="home">
-    <div class="container hero-content">
+      <a href="#top" class="brand" aria-label="Yobin Bangera, back to top">
+        <span class="brand-mark" aria-hidden="true">YB</span>
+        <span class="brand-name">Yobin Bangera</span>
+      </a>
 
-      <div class="hero-text" data-aos="fade-right">
-        <h1>
-          Hello I am, <span class="highlight">Yobin Omkar Bangera.</span>
-        </h1>
+      <nav class="site-nav" id="siteNav" aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <!-- The Blog link and section appear automatically once blog/posts.json has a post -->
+          <li data-blog-only hidden><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-        <p>
-          MBA Student • Data Analyst • Business Analyst • Digital Marketing Enthusiast
-          <br><br>
-          Passionate about transforming raw data into meaningful business insights through analytics, dashboards, strategic thinking, and modern problem-solving.
-        </p>
+      <div class="header-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch colour theme">
+          <svg class="icon icon-when-dark"><use href="#icon-sun"></use></svg>
+          <svg class="icon icon-when-light"><use href="#icon-moon"></use></svg>
+        </button>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="primary-button">
-            <i class="fa-solid fa-chart-line"></i>
-            View My Projects
-          </a>
-
-          <a href="https://github.com/YobinOmkarBangera" target="_blank" class="secondary-button">
-            <i class="fa-brands fa-github"></i>
-            My GitHub Profile
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-image-container" data-aos="fade-left">
-        <div class="hero-image" style="border-radius: 40px;">
-          <!-- Replace with your profile image -->
-          <img src="assets/images/profile.jpeg" alt="Yobin Bangera">
-        </div>
+        <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon icon-menu-open"><use href="#icon-menu"></use></svg>
+          <svg class="icon icon-menu-close"><use href="#icon-close"></use></svg>
+        </button>
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <!-- =====================================================
-       ABOUT SECTION
-  ====================================================== -->
+  <main id="main">
 
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About <span class="highlight">Me</span></h2>
-      <p class="section-subtitle">My journey, goals, and background</p>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
 
-      <div class="about-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Data &amp; Business Analyst</p>
 
-        <div class="about-card" data-aos="fade-up">
-          <h3>Who I Am ?</h3>
-          <p>
-            Currently I am a MBA student from Mahindra University Hyderabad, A BCA graduate from Amity University Mumbai with a strong interest in analytics, business strategy, consulting, and digital transformation. I enjoy working with data, identifying business problems, and creating actionable solutions.
+          <h1 class="reveal" data-delay="1">
+            I turn raw data into <span class="accent">decisions a business can act on.</span>
+          </h1>
+
+          <p class="hero-lead reveal" data-delay="2">
+            I'm Yobin Omkar Bangera, an MBA candidate in Business Analytics and Marketing at Mahindra University.
+            I work with Power BI, Python and Excel, from cleaning raw data to dashboards and machine-learning models.
           </p>
-        </div>
 
-        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-          <h3>My Vision !</h3>
-          <p>
-            My goal is to build a strong career as a Data Analyst, Business Analyst, or Consultant by combining analytical thinking, technical skills, and business understanding to create meaningful business impact.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================
-       SKILLS SECTION
-  ====================================================== -->
-
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">My <span class="highlight">Skills</span></h2>
-      <p class="section-subtitle">Tools and technologies I work with</p>
-
-      <div class="skills-grid">
-
-        <div class="skill-card" data-aos="zoom-in">
-          <i class="fa-solid fa-chart-pie"></i>
-          <h4>Data Analytics</h4>
-          <p>Data cleaning, EDA, dashboards, reporting, and business insights.</p>
-        </div>
-
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-          <i class="fa-brands fa-python"></i>
-          <h4>Python</h4>
-          <p>Pandas, NumPy, Matplotlib, and analytics workflows.</p>
-        </div>
-
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-          <i class="fa-solid fa-database"></i>
-          <h4>SQL</h4>
-          <p>Database querying, joins, aggregations, and reporting.</p>
-        </div>
-
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          <i class="fa-solid fa-file-excel"></i>
-          <h4>Excel</h4>
-          <p>Data cleaning, pivot tables, functions and data visualization.</p>
-        </div>
-
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          <i class="fa-solid fa-chart-column"></i>
-          <h4>Power BI</h4>
-          <p> Interactive dashboards, KPI tracking, business intelligence, and visualization. </p>
-        </div>
-
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          <i class="fa-solid fa-bullhorn"></i>
-          <h4>Digital Marketing</h4>
-          <p>SEO, SEM, Meta Ads, analytics, and campaign strategy.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================
-       PROJECTS SECTION
-  ====================================================== -->
-
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-      <p class="section-subtitle">Some of my best portfolio projects</p>
-
-      <div class="project-grid">
-
-        <div class="project-card" data-aos="fade-up">
-          <div class="project-image">
-            <img src="assets/images/netflix_project.png" alt="Project Image">
+          <div class="button-row reveal" data-delay="3">
+            <a href="#projects" class="button button-primary">
+              <svg class="icon"><use href="#icon-chart"></use></svg>
+              View projects
+            </a>
+            <a href="/assets/resume/Yobin_Bangera_Resume.pdf" download class="button button-ghost">
+              <svg class="icon"><use href="#icon-download"></use></svg>
+              Résumé
+            </a>
+            <a href="https://www.linkedin.com/in/yobin-bangera/" target="_blank" rel="noopener noreferrer" class="button button-ghost">
+              <svg class="icon"><use href="#icon-linkedin"></use></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/YobinOmkarBangera" target="_blank" rel="noopener noreferrer" class="button button-ghost">
+              <svg class="icon"><use href="#icon-github"></use></svg>
+              GitHub
+            </a>
           </div>
+        </div>
 
-          <div class="project-content">
-            <h3>Netflix Content Analysis</h3>
-            <p>
-              Built a complete content analytics project using Python to identify user preferences, viewing patterns, and content performance metrics.
-            </p>
+        <div class="hero-portrait reveal" data-delay="2">
+          <div class="portrait-frame">
+            <img src="/assets/images/profile.webp" alt="Portrait of Yobin Omkar Bangera" width="800" height="1000" fetchpriority="high">
+          </div>
+          <div class="portrait-chip chip-top">
+            <strong>3rd place</strong>
+            <span>Closing Bell 2026</span>
+          </div>
+          <div class="portrait-chip chip-bottom">
+            <strong>MBA 2025&ndash;27</strong>
+            <span>Analytics &amp; Marketing</span>
+          </div>
+        </div>
 
-            <div class="project-links">
-              <a href="https://github.com/YobinOmkarBangera/Netflix_Dashboard_Tableau" target="_blank" class="project-link-button">
-                GitHub
+      </div>
+
+      <!-- Headline numbers -->
+      <div class="container">
+        <dl class="stat-strip reveal">
+          <div class="stat">
+            <dt>BCA, Amity University</dt>
+            <dd>8.97 <small>CGPA</small></dd>
+          </div>
+          <div class="stat">
+            <dt>Crowwd Closing Bell 2026</dt>
+            <dd>3rd <small>place</small></dd>
+          </div>
+          <div class="stat">
+            <dt>IPL Crunch '26 hackathon</dt>
+            <dd>Top 10</dd>
+          </div>
+          <div class="stat">
+            <dt>Scholarships earned</dt>
+            <dd>3&times;</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">A technical base with a business lens</h2>
+          <p class="prose">
+            I'm an MBA candidate at Mahindra University, Hyderabad, specialising in Business Analytics and Marketing.
+            Before that I graduated in Computer Applications from Amity University Mumbai.
+          </p>
+          <p class="prose">
+            I have hands-on experience in data analytics, machine learning, Power BI, Python, Excel and digital marketing.
+            What I enjoy most is working through a messy dataset, finding the business problem behind it, and turning
+            the answer into something a team can use.
+          </p>
+        </div>
+
+        <ul class="fact-list reveal" data-delay="1">
+          <li>
+            <span class="fact-label">Based in</span>
+            <span class="fact-value">Mumbai, India</span>
+          </li>
+          <li>
+            <span class="fact-label">Currently</span>
+            <span class="fact-value">MBA, Mahindra University (2025&ndash;2027)</span>
+          </li>
+          <li>
+            <span class="fact-label">Recent</span>
+            <span class="fact-value">Data Analyst Intern, Micro Labs India</span>
+          </li>
+          <li>
+            <span class="fact-label">Looking for</span>
+            <span class="fact-value">Data analyst and business analyst roles</span>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PROJECTS
+         Featured projects: copy an <article class="project"> block.
+         Smaller ones: copy an <article class="card mini-project"> block.
+    ====================================================== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-lead">Competition entries, an AI assistant and BI dashboards, all with code on GitHub.</p>
+        </header>
+
+        <div class="project-list">
+
+          <article class="project reveal">
+            <a class="project-media" href="https://github.com/YobinOmkarBangera/TrueShape" target="_blank" rel="noopener noreferrer" aria-label="Open the TrueShape project on GitHub">
+              <img src="/assets/images/trueshape.webp" alt="TrueShape title slide: a transparent monitor that flags merchants whose payments stop matching the business they registered as" width="1280" height="720" loading="lazy">
+            </a>
+            <div class="project-body">
+              <span class="tag">Python &middot; FastAPI &middot; Fraud analytics</span>
+              <h3>TrueShape</h3>
+              <p>
+                A team entry for the Follow The Money innovation challenge by IIM Bangalore and PayU. It flags shops whose
+                payment patterns stop matching the business they registered as, while leaving shops that simply grow alone.
+                It uses plain statistics and stated rules, so every decision comes with an explanation.
+              </p>
+              <dl class="metric-row">
+                <div><dt>Fraud fronts stopped</dt><dd>18 / 18</dd></div>
+                <div><dt>Honest shops disrupted</dt><dd>0 / 150</dd></div>
+                <div><dt>Caught on unseen data</dt><dd>99.7%</dd></div>
+              </dl>
+              <a class="text-link" href="https://github.com/YobinOmkarBangera/TrueShape" target="_blank" rel="noopener noreferrer">
+                View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
               </a>
-
-              
             </div>
-          </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project-media" href="https://github.com/YobinOmkarBangera/FinePrint-RAG" target="_blank" rel="noopener noreferrer" aria-label="Open the FinePrint project on GitHub">
+              <img src="/assets/images/fineprint-rag.webp" alt="FinePrint app comparing the pre-existing disease waiting period across four health insurance policies, with numbered citations" width="800" height="505" loading="lazy">
+            </a>
+            <div class="project-body">
+              <span class="tag">Python &middot; RAG &middot; Streamlit</span>
+              <h3>FinePrint</h3>
+              <p>
+                An AI assistant that answers health insurance questions in plain language and cites the exact policy
+                clause and page. It combines meaning-based and keyword search, and says so when a policy doesn't
+                cover the question instead of guessing.
+              </p>
+              <dl class="metric-row">
+                <div><dt>Policy pages indexed</dt><dd>231</dd></div>
+                <div><dt>Right clause retrieved</dt><dd>27 / 27</dd></div>
+                <div><dt>Policies compared</dt><dd>4</dd></div>
+              </dl>
+              <a class="text-link" href="https://github.com/YobinOmkarBangera/FinePrint-RAG" target="_blank" rel="noopener noreferrer">
+                View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project-media" href="https://github.com/YobinOmkarBangera/IPL-Crunch-26" target="_blank" rel="noopener noreferrer" aria-label="Open the IPL Crunch '26 project on GitHub">
+              <img src="/assets/images/ipl-crunch-dashboard.webp" alt="Power BI overview page of the IPL dashboard with season run trends, match results, top scoring teams and toss decisions" width="1280" height="741" loading="lazy">
+            </a>
+            <div class="project-body">
+              <span class="tag">Python &middot; Power BI &middot; DAX</span>
+              <h3>IPL Crunch '26</h3>
+              <p>
+                A top-10 entry in Wooble's IPL Crunch '26 analytics hackathon. I cleaned five seasons of ball-by-ball
+                data in Python and built a six-page Power BI dashboard. The finding: winning the toss matters far
+                less than death-over execution and bowling pressure.
+              </p>
+              <dl class="metric-row">
+                <div><dt>Seasons analysed</dt><dd>5</dd></div>
+                <div><dt>Toss winners who won</dt><dd>49.1%</dd></div>
+                <div><dt>Dashboard pages</dt><dd>6</dd></div>
+              </dl>
+              <a class="text-link" href="https://github.com/YobinOmkarBangera/IPL-Crunch-26" target="_blank" rel="noopener noreferrer">
+                View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
+              </a>
+            </div>
+          </article>
+
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <img src="assets/images/sales_project.png" alt="Project Image">
-          </div>
+        <!-- Smaller dashboard projects -->
+        <h3 class="subsection-title reveal">More dashboards</h3>
 
-          <div class="project-content">
+        <div class="card-grid">
+
+          <article class="card mini-project reveal">
+            <a class="mini-project-media" href="https://github.com/YobinOmkarBangera/Mobile_Sales_Dashboard_PowerBI" target="_blank" rel="noopener noreferrer" aria-label="Open the Mobile Sales Dashboard project on GitHub">
+              <img src="/assets/images/sales-dashboard.webp" alt="Power BI mobile sales dashboard with KPI cards, sales by city and monthly trend" width="1280" height="726" loading="lazy">
+            </a>
+            <span class="tag">Power BI</span>
             <h3>Mobile Sales Dashboard</h3>
-            <p>
-              Created an interactive dashboard to visualize sales, customer behavior, and business KPIs for decision-making.
-            </p>
+            <p>Sales by brand, model, city and payment method across 769.2M in sales, with month-to-date and year-on-year views.</p>
+            <a class="text-link" href="https://github.com/YobinOmkarBangera/Mobile_Sales_Dashboard_PowerBI" target="_blank" rel="noopener noreferrer">
+              View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
+            </a>
+          </article>
 
-            <div class="project-links">
-              <a href="https://github.com/YobinOmkarBangera/Mobile_Sales_Dashboard_PowerBI" target="_blank" class="project-link-button">
-                GitHub
-              </a>
+          <article class="card mini-project reveal" data-delay="1">
+            <a class="mini-project-media" href="https://github.com/YobinOmkarBangera/Netflix_Dashboard_Tableau" target="_blank" rel="noopener noreferrer" aria-label="Open the Netflix Content Analysis project on GitHub">
+              <img src="/assets/images/netflix-dashboard.webp" alt="Tableau dashboard of the Netflix catalogue with a world map, ratings and top genres" width="1280" height="695" loading="lazy">
+            </a>
+            <span class="tag">Tableau</span>
+            <h3>Netflix Content Analysis</h3>
+            <p>6,234 titles explored by type, country, rating and genre. Movies make up 68% of the catalogue.</p>
+            <a class="text-link" href="https://github.com/YobinOmkarBangera/Netflix_Dashboard_Tableau" target="_blank" rel="noopener noreferrer">
+              View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
+            </a>
+          </article>
 
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-image">
-            <img src="assets/images/road_project.png" alt="Project Image">
-          </div>
-
-          <div class="project-content">
+          <article class="card mini-project reveal" data-delay="2">
+            <a class="mini-project-media" href="https://github.com/YobinOmkarBangera/Road-Accident-Analysis-Dashboard" target="_blank" rel="noopener noreferrer" aria-label="Open the Road Accident Analysis project on GitHub">
+              <img src="/assets/images/road-dashboard.webp" alt="Excel road accident dashboard with casualties by severity, vehicle, road type and light condition" width="1280" height="625" loading="lazy">
+            </a>
+            <span class="tag">Excel</span>
             <h3>Road Accident Analysis</h3>
-            <p>
-              Analyzed road accident data to identify patterns, contributing factors, and potential safety improvements.
-            </p>
+            <p>16,107 casualties broken down by severity, vehicle, road type and conditions. Cars account for 78%.</p>
+            <a class="text-link" href="https://github.com/YobinOmkarBangera/Road-Accident-Analysis-Dashboard" target="_blank" rel="noopener noreferrer">
+              View on GitHub <svg class="icon"><use href="#icon-arrow"></use></svg>
+            </a>
+          </article>
 
-            <div class="project-links">
-              <a href="https://github.com/YobinOmkarBangera/Road-Accident-Analysis-Dashboard" target="_blank" class="project-link-button">
-                GitHub
-              </a>
+        </div>
+      </div>
+    </section>
 
-              
-            </div>
-          </div>
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 class="section-title">Tools I work with</h2>
+        </header>
+
+        <div class="card-grid">
+
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon"><use href="#icon-chart"></use></svg></span>
+            <h3>BI &amp; Visualisation</h3>
+            <p>Interactive dashboards, KPI tracking and reporting.</p>
+            <ul class="chip-list">
+              <li>Power BI</li>
+              <li>DAX</li>
+              <li>Excel</li>
+              <li>Tableau</li>
+              <li>Looker Studio</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-delay="1">
+            <span class="card-icon"><svg class="icon"><use href="#icon-database"></use></svg></span>
+            <h3>Data &amp; Machine Learning</h3>
+            <p>Cleaning, exploring and modelling data.</p>
+            <ul class="chip-list">
+              <li>Python</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>SQL</li>
+              <li>Machine learning</li>
+              <li>Streamlit</li>
+              <li>RAG / LLM apps</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-delay="2">
+            <span class="card-icon"><svg class="icon"><use href="#icon-megaphone"></use></svg></span>
+            <h3>Business &amp; Marketing</h3>
+            <p>Strategy, research and campaign work.</p>
+            <ul class="chip-list">
+              <li>Business insights</li>
+              <li>Social media research (NodeXL)</li>
+              <li>SEO</li>
+              <li>SEM</li>
+              <li>Meta Ads</li>
+              <li>Content strategy</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EXPERIENCE
+         Copy a <li class="timeline-item"> to add one.
+    ====================================================== -->
+    <section class="section section-alt" id="experience">
+      <div class="container narrow">
+
+        <header class="section-head reveal">
+          <p class="eyebrow">Experience</p>
+          <h2 class="section-title">Internship and leadership</h2>
+        </header>
+
+        <ol class="timeline">
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Apr &ndash; Jun 2026 &middot; Internship</p>
+            <h3>Data Analyst Intern</h3>
+            <p class="timeline-org">Micro Labs India Pvt. Ltd., Animal Health Care Division</p>
+            <ul class="bullet-list">
+              <li>Cleaned, transformed and analysed ERP data (3,000+ line items) and built interactive Power BI dashboards for regional managers covering sales, returns and procurement.</li>
+              <li>Found that a single product drove 22% of revenue and that the top five vendors took 75% of spend, and presented mitigation strategies to management.</li>
+            </ul>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Aug 2025 &ndash; Present</p>
+            <h3>Research Assistant</h3>
+            <p class="timeline-org">School of Management, Mahindra University</p>
+            <p>Support faculty research through large-scale social media data collection, cleaning and analysis. Currently building Twitter/X datasets on the Iran&ndash;Israel&ndash;USA conflict with NodeXL for social network and content analysis.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Aug 2026</p>
+            <h3>Event Coordinator, PRAMAAN International Conference 2026</h3>
+            <p class="timeline-org">School of Management, Mahindra University</p>
+            <p>Directed operations across 7&ndash;8 cross-functional departments and managed a team of 90+ volunteers for the two-day on-campus conference.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Jan 2026 &ndash; Present</p>
+            <h3>Social Media Coordinator</h3>
+            <p class="timeline-org">School of Management, Mahindra University</p>
+            <p>Develop content strategies and manage engagement across the department's social platforms.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Jul 2025 &ndash; Jul 2026</p>
+            <h3>Non-Academic Class Representative</h3>
+            <p class="timeline-org">MBA cohort of 49, Mahindra University</p>
+            <p>Acted as the main link between the cohort and faculty, and coordinated all non-academic events.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">Jan &ndash; Feb 2026</p>
+            <h3>Campus Ambassador, BECon '26</h3>
+            <p class="timeline-org">Entrepreneurship Development Cell, IIT Delhi</p>
+            <p>Drove brand awareness and participation for IIT Delhi's entrepreneurship conclave through targeted marketing.</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EDUCATION
+    ====================================================== -->
+    <section class="section" id="education">
+      <div class="container narrow">
+
+        <header class="section-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2 class="section-title">Academic background</h2>
+        </header>
+
+        <ol class="timeline">
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">2025 &ndash; 2027</p>
+            <h3>MBA, Business Analytics &amp; Marketing</h3>
+            <p class="timeline-org">Mahindra University, Hyderabad</p>
+            <p>CGPA 7.79. Awarded a 50% merit scholarship.</p>
+            <ul class="chip-list">
+              <li>International immersion: Frankfurt School of Finance &amp; Management, Germany (Jun&ndash;Jul 2026)</li>
+            </ul>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">2021 &ndash; 2024</p>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p class="timeline-org">Amity University Mumbai</p>
+            <p>CGPA 8.97, with a minor in Animation. Awarded 100% and 25% scholarships.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">2019 &ndash; 2021</p>
+            <h3>Higher Secondary Certificate (HSC), Commerce</h3>
+            <p class="timeline-org">Bhavan's College, Mumbai</p>
+            <p>94% aggregate.</p>
+          </li>
+
+          <li class="timeline-item reveal">
+            <p class="timeline-date">2019</p>
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p class="timeline-org">MVM's International School, Mumbai</p>
+            <p>82.4% aggregate.</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ACHIEVEMENTS AND CERTIFICATIONS
+    ====================================================== -->
+    <section class="section section-alt" id="achievements">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <p class="eyebrow">Achievements</p>
+          <h2 class="section-title">Recognition and certifications</h2>
+        </header>
+
+        <div class="card-grid card-grid-2">
+
+          <article class="card card-feature reveal">
+            <p class="card-kicker">3rd place</p>
+            <h3>Crowwd Closing Bell 2026</h3>
+            <p>Virtual trading competition hosted on Unstop.</p>
+          </article>
+
+          <article class="card card-feature reveal" data-delay="1">
+            <p class="card-kicker">10th place</p>
+            <h3>Wooble IPL Crunch '26</h3>
+            <p>Data analytics hackathon hosted on Unstop.</p>
+          </article>
+
+          <article class="card reveal">
+            <p class="card-kicker">10th place</p>
+            <h3>Unstop Marketing Quizverse 2026</h3>
+            <p>Marketing quiz competition.</p>
+          </article>
+
+          <article class="card reveal" data-delay="1">
+            <p class="card-kicker">Champion</p>
+            <h3>Google Cloud Arcade</h3>
+            <p>Reached the Championship Milestone in Season 2, 2024.</p>
+          </article>
+
+        </div>
+
+        <div class="cert-block reveal">
+          <h3 class="subsection-title">Certifications</h3>
+          <ul class="chip-list chip-list-lg">
+            <li>Data Fundamentals (IBM)</li>
+            <li>Data Analytics Essentials (Cisco)</li>
+            <li>McKinsey Forward Program</li>
+            <li>Digital Marketing Mentorship, 6 months (WsCube Tech)</li>
+          </ul>
+          <p class="cert-note">
+            Hackathons: Hackingly Nirman 2024, Indian Oil Nirman 2023 and Tech Hack 2023.
+            <a class="text-link" href="https://www.credly.com/users/yobin-omkar-bangera" target="_blank" rel="noopener noreferrer">
+              See my badges on Credly <svg class="icon"><use href="#icon-arrow"></use></svg>
+            </a>
+          </p>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================
-     EDUCATION SECTION
-  ====================================================== -->
+    <!-- =====================================================
+         BLOG
+         This section stays hidden until blog/posts.json has
+         at least one post. The cards are built from that file
+         by assets/js/blog.js, so there is nothing to edit here.
+         See README.md > "Writing a blog post".
+    ====================================================== -->
+    <section class="section" id="blog" data-blog-only hidden>
+      <div class="container">
 
-  <section id="education">
-    <div class="container">
+        <header class="section-head section-head-split reveal">
+          <div>
+            <p class="eyebrow">Blog</p>
+            <h2 class="section-title">Latest writing</h2>
+          </div>
+          <a class="text-link" href="/blog">All posts <svg class="icon"><use href="#icon-arrow"></use></svg></a>
+        </header>
 
-    <h2 class="section-title">
-      My <span class="highlight">Education</span>
-    </h2>
+        <div class="card-grid" data-blog-list data-limit="3"></div>
 
-    <p class="section-subtitle">
-      My academic journey and qualifications
-    </p>
+      </div>
+    </section>
 
-    <div class="timeline-container">
-
-      <div class="timeline-card" data-aos="fade-right" data-aos-delay="100">
-        <h3>Master of Business Administration (MBA)</h3>
-
-        <span>2025 - 2027 • Mahindra University Hyderabad</span>
-        <span>Business Analytics as (Major) and Marketing as (Minor) Specialization</span>
-        <span>Social Media Coordinator | Non-Academic class Representative | Research Assistant</span>
-        <span>International Immersion – Frankfurt School of Finance & Management, Germany</span>
-
-        <p>
-          Focused on analytics, consulting, business strategy, data-driven decision making and also received merit scholarships.
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+    <section class="section contact" id="contact">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-lead">
+          I'm open to data analyst and business analyst roles. The quickest way to reach me is LinkedIn.
         </p>
+
+        <div class="button-row button-row-center">
+          <a href="https://www.linkedin.com/in/yobin-bangera/" target="_blank" rel="noopener noreferrer" class="button button-primary">
+            <svg class="icon"><use href="#icon-linkedin"></use></svg>
+            Message me on LinkedIn
+          </a>
+          <a href="/assets/resume/Yobin_Bangera_Resume.pdf" download class="button button-ghost">
+            <svg class="icon"><use href="#icon-download"></use></svg>
+            Download résumé
+          </a>
+          <a href="https://github.com/YobinOmkarBangera" target="_blank" rel="noopener noreferrer" class="button button-ghost">
+            <svg class="icon"><use href="#icon-github"></use></svg>
+            GitHub
+          </a>
+          <a href="https://www.credly.com/users/yobin-omkar-bangera" target="_blank" rel="noopener noreferrer" class="button button-ghost">
+            <svg class="icon"><use href="#icon-award"></use></svg>
+            Credly
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="timeline-card" data-aos="fade-right">
-        <h3>Bachelor of Computer Applications (BCA)</h3>
-
-        <span>2021 - 2024 • Amity University Mumbai</span>
-
-        <p>
-          Graduated with 8.97 CGPA in Bachelor of Computer Applications as (Major) and Bachelor's Degree in Animation as (Minor) and also received merit scholarships for academic excellence.
-        </p>
-      </div>
-
-      <div class="timeline-card" data-aos="fade-right">
-        <h3>Higher Secondary Certificate (HSC)</h3>
-
-        <span>2019 - 2021 • Bhavan's College, Mumbai</span>
-
-        <p>
-          Completed Higher Secondary Education with a focus on commerce stream, achieving 94% aggregate marks.
-        </p>
-      </div>
-
-      <div class="timeline-card" data-aos="fade-right" data-aos-delay="200">
-        <h3>Secondary School Certificate (SSC)</h3>
-
-        <span>2019 • MVM's International School, Mumbai</span>
-
-        <p>
-          Completed Secondary School Education with achieving 82.4% aggregate marks.
-        </p>
-      </div>
-      
-    </div>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
-     EXPERIENCE SECTION
-  ====================================================== -->
-
-  <section id="experience">
-  <div class="container">
-
-    <h2 class="section-title">
-      My <span class="highlight">Experience</span>
-    </h2>
-
-    <p class="section-subtitle">
-      Work Experience, programs, and practical exposure
-    </p>
-
-    <div class="timeline-container">
-
-      <div class="timeline-card" data-aos="fade-right">
-        <h3>Microlabs Data Analyst Intern</h3>
-
-        <span>2 months • April - June 2026 • Microlabs India Pvt. Ltd.</span>
-
-        <p>
-          worked on data cleaning, exploratory data analysis, and dashboard creation to provide insights for business decision-making.
-        </p>
-      </div>
-
-       <div class="timeline-card" data-aos="fade-right">
-        <h3>Campus Ambassador for IIT Delhi edc</h3>
-
-        <span>2 months • Jan - Feb 2026 • IIT Delhi</span>
-
-        <p>
-          Represented IIT Delhi for the Becon'26 event and promoted the institution's programs and initiatives.
-        </p>
-      </div>
-
-      <div class="timeline-card" data-aos="fade-right" data-aos-delay="100">
-        <h3>Digital Marketing Mentorship</h3>
-
-        <span>6 months • Jan - June 2025 • WsCube Tech</span>
-
-        <p>
-          Completed an extensive mentorship program covering SEO, SEM, Meta Ads, analytics, and campaign strategy.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-  </section>
-
-  <!-- =====================================================
-     ACHIEVEMENTS SECTION
-  ====================================================== -->
-
-  <section id="achievements">
-  <div class="container">
-
-    <h2 class="section-title">
-      My <span class="highlight">Achievements</span>
-    </h2>
-
-    <p class="section-subtitle">
-      Highlights of my academic and professional journey
-    </p>
-
-    <div class="about-card" data-aos="zoom-in">
-
-      <ul class="achievement-list">
-
-        <li>Received <strong>2x merit scholarships</strong> during academic journey.</li>
-
-        <li>Reached <strong>Champion Milestone</strong> in Google Cloud Arcade Program.</li>
-
-        <li>Participated in <strong>hackathons, sports, fashion show, and university events</strong>.</li>
-
-        <li>Built <strong>portfolio projects</strong> in analytics, dashboards, and marketing strategy.</li>
-
-        <li> 🏆 <strong>Rank 3 – Closing Bell 2026</strong><br> National Business Strategy Competition conducted by Crowwd. </li>
-
-        <li> 🥇 <strong>Top 10 – IPL Crunch '26</strong><br> National Analytics Hackathon hosted by Wooble.</li>
-
-      </ul>
-
-    </div>
-
-  </div>
-  </section>
-
-  <!-- =====================================================
-       CONNECT SECTION
-  ====================================================== -->
-
-  <section id="connect">
-    <div class="container connect-container">
-      <h2 class="section-title">Connect <span class="highlight">With Me</span></h2>
-      <p class="section-subtitle">Let's connect through social platforms</p>
-
-      <div class="social-links">
-
-        <a href="https://github.com/YobinOmkarBangera" target="_blank" class="social-link">
-          <i class="fa-brands fa-github"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/yobin-bangera/" target="_blank" class="social-link">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-
-        <a href="https://www.credly.com/users/yobin-omkar-bangera" target="_blank" class="social-link">
-          <i class="fa-solid fa-certificate"></i>
-        </a>
-
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- =====================================================
        FOOTER
   ====================================================== -->
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 | Yobin Omkar Bangera </p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Yobin Omkar Bangera</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <script>
-
-    /* =====================================================
-       AOS ANIMATION INITIALIZATION
-    ====================================================== */
-
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    /* =====================================================
-       LIGHT & DARK MODE TOGGLE
-    ====================================================== */
-
-    const themeToggleButton = document.getElementById('themeToggleButton');
-    const body = document.body;
-
-    themeToggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
-      const icon = themeToggleButton.querySelector('i');
-
-      if (body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      }
-    });
-
-  </script>
-
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/blog.js" defer></script>
 </body>
 </html>

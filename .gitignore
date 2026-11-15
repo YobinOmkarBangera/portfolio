@@ -1,0 +1,14 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local tooling
+.claude/
+.vercel/
+__pycache__/
+
+# Secrets must never be committed
+.env
+.env.*

@@ -1,0 +1,5 @@
+# Files that are in the repository but should not be published on the website
+README.md
+tools/
+.claude/
+blog/_template.html
